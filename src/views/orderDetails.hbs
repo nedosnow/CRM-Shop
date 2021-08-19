@@ -1,0 +1,95 @@
+{{#if currentOrder}}
+<div class="currentOrder" data-id='{{currentOrder._id}}'>
+  <h3>Детали заказа {{currentOrder.number}}</h3>
+  <p>Клиент: {{currentOrder.client.surname}} {{currentOrder.client.name}} {{currentOrder.client.patronymic}}</p>
+  <div>Тип мебели: {{currentOrder.typeFurn}}</div>
+  <div>Стоимость мебели: {{currentOrder.priceFurn}}</div>
+  <div>Бригада доставки: {{currentOrder.deliveryTeam}}</div>
+  <div>Дата доставки: {{currentOrder.deliveryDate}}</div>
+  <div>Стоимость доставки: {{currentOrder.delivPrice}}</div>
+  <div>Дата сборки: {{currentOrder.constructDate}}</div>
+  <div>Бригада сборки: {{currentOrder.constructTeam}}</div>
+  <div>Стоимость сборки: {{currentOrder.constructPrice}}</div>
+  <div>Статус: {{currentOrder.status}}</div>
+  <div>Комментарии при заказе: {{currentOrder.commentsWhenCreate}}</div>
+  <h4>Комментарии сотрудников:</h4>
+  <div class="comments">
+    {{#if currentOrder.comments}}
+    <div class="commentsOrder">
+      {{#each currentOrder.comments}}
+      <p>{{this.body}}</p>
+      <div style="font-size: 12px;">Дата комментария: {{this.date}}</div>
+      <div style="font-size: 12px;">Автор комментария: {{this.user}}</div>
+      <hr>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+  {{!-- <div>Комментарии: {{currentOrder.comments}}</div> --}}
+  <form class="leavecommenttoorder" method="POST">
+    <textarea placeholder="Оставьте комментарий о заказе" name="body" cols="40" rows="3"></textarea>
+    <button type="submit" class="btn-comment btn btn-primary">оставить комментарий</button>
+  </form>
+</div>
+
+  {{/if}}
+
+
+<style>
+   body{
+    background-color: #efede9;
+    background-image: none;
+  }
+
+  .currentOrder{
+        margin-top: 6%;
+    border: solid;
+    border-radius: 14px;
+    padding: 17px;
+    border-color: #8e90716e;
+  }
+  textarea{   
+     background: none;
+    border-color: #a1977c;
+    border-radius: 18px;
+}
+
+
+ .btn-primary {
+    color: #fff;
+    background-color: #9a9377;
+    border-color: #a29781;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #837a62;
+    border-color: #f1f1e5;
+}
+
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgb(169 159 134 / 46%);
+}
+.btn-check:focus+.btn, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(151 139 115 / 77%);
+}
+
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #8e8375;;
+    border-color: #8e8375;;
+}
+btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #fff;
+    background-color: #a79c88;
+    border-color: #a79c88;
+    box-shadow: 0 0 0 0.25rem rgb(151 139 115 / 77%);
+}
+.comments {
+    height: 150px;
+    overflow-y: scroll;
+    border: 1px solid #a1977c;
+    border-radius: 10px;
+    padding: 10px;
+}
+</style>

@@ -1,0 +1,46 @@
+<form class="short-form" id="signInForm" action='http://localhost:3000/auth/signin' method="POST">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Ваш email</label>
+        <input name="email" type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            {{#if flag}}
+              <p style="color:red">В системе нет такой почты</p>
+            {{/if}}
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input name="password" minlength="1" required type="password" class="form-control" id="exampleInputPassword1">
+        {{#if flag2}}
+          <p style="color:red">Неверный пароль, осталась 1 попытка</p>
+        {{/if}}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<style>
+  .btn-primary {
+    color: #fff;
+    background-color: #9a9377;
+    border-color: #a29781;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #837a62;
+    border-color: #e7e7e6;
+}
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #948a71;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(154 147 119 / 19%);
+}
+.container{
+      width: 24%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+
+}
+</style>

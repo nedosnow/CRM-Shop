@@ -1,0 +1,52 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url(/css/image/beige-and-black-chair-in-front-of-white-desk-509922.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-position-y: -54px;
+  height: 100%;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
+.clientContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.leavecomment {
+  display: flex;
+  flex-direction: column;
+}
+.btn-comment {
+  width: 50%;
+  margin: 10px 0;
+}
+.comments {
+  height: 150px;
+  overflow-y: scroll;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.header .bg-light {
+  background-color: inherit !important;
+}
+
+.orderOfClient {
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+}
+.none {
+  display: none;
+}

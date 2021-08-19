@@ -1,0 +1,73 @@
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+
+          {{#if email}}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+
+          <li id='onleft' class="nav-item">
+            <div class="nav-link" >Вы авторизованы как <b>{{name}}</b></div>
+          </li>
+          {{/if}}
+
+          {{#if email}}
+
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="#">Создать</a>
+          </li> --}}
+
+        <li class="nav-item">
+          <a class="nav-link" href="/clients/new">Добавить нового клиента</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/clients">Клиенты</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/orders">Заказы</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/signout">Выйти</a>
+          </li>
+        {{!-- {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/signin">Войти</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/signup">Зарегистрироваться</a>
+          </li> --}}
+          {{/if}}
+
+          
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<style>
+  .navbar {
+    background: content-box;
+    background-color: #ededed !important;
+
+    margin-bottom: 2%;
+  }
+  .navbar-nav{
+font-size: 24px;
+    margin-right: auto;
+    width: 100%;
+  }
+  #onleft{
+       margin-right: auto;
+
+  }
+
+  
+  
+</style>
